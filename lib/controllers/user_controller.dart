@@ -13,6 +13,8 @@ class UserController extends ChangeNotifier {
     _isLoading = true;
     notifyListeners();
 
+    await Future.delayed(Duration(seconds: 3));
+
     _users = await UserService.fetchUsers();
 
     _isLoading = false;

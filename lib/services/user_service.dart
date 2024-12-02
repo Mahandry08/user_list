@@ -12,7 +12,7 @@ class UserService {
       List<dynamic> jsonResponse = json.decode(response.body);
       return jsonResponse.map((user) => User.fromJson(user)).toList();
     } else {
-      throw Exception('Failed to load users');
+      throw Exception('An error occured while fetching users');
     }
   }
 }

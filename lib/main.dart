@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:user_list/controllers/user_controller.dart';
 import 'package:user_list/routes/app_routes.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const UserListApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => UserController(),
+      child: UserListApp(),
+    ),
+  );
 }
 
 class UserListApp extends StatelessWidget {
