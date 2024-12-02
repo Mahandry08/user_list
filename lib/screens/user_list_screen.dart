@@ -19,7 +19,10 @@ class _UserListScreenState extends State<UserListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Liste des utilisateurs')),
+      appBar: AppBar(
+          title: Text('Liste des utilisateurs'),
+          centerTitle: true
+      ),
       body: Consumer<UserController>(
         builder: (context, userController, child) {
           if (userController.isLoading) {
@@ -54,7 +57,7 @@ class _UserListScreenState extends State<UserListScreen> {
                 elevation: 4,
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: Colors.blueAccent,
+                    backgroundColor: Colors.lightBlue,
                     child: Text(
                       user.name[0], // Affiche la première lettre du nom
                       style: TextStyle(color: Colors.white, fontSize: 24),
